@@ -1,24 +1,25 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Welcome from './components/WelcomeStatelessComponent'
+import ClassComponent from './components/ClassComponent' 
+import EventComponent from './components/EventComponent'
+import ListsComponent from './components/ListsComponent'
+import FormComponent from './components/FormComponent'
+
 
 function App() {
+  let name = 'salah';
+  let show = true;
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Welcome name={name} show={show}/>
+      <hr/>
+      <ClassComponent laptopModel="Dell G3 3590"/>
+      <hr/>
+      <EventComponent />
+      <hr/>
+      <ListsComponent />
+      <hr/>
+      <FormComponent />
     </div>
   );
 }
