@@ -1,48 +1,48 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 
 class FormComponent extends Component {
-    constructor(props) 
-    {
-        super(props);
+
+    constructor(props) {
+        super(props)
         this.state = {
-            name: '',
             email: '',
+            password: '',
             description: ''
-        };
-        
-        this.handleChange = this.handleChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
+
+        }
 
     }
 
-    handleChange(e) {
+    inputChange = (e) => {
         this.setState({
-            // ...this.state,
-            [e.target.name] : e.target.value
+            [e.target.name]: e.target.value
         })
-
     }
 
-    handleSubmit(e) {
-        console.log(this.state)
-        e.preventDefault();
+    formSubmit = (e) => {
+        e.preventDefault()
+        alert('Data sent!')
+        this.setState({
+            email: '',
+            password: '',
+            description: ''
+        })
     }
 
     render() {
-        return (
-            <form>
-                Name: 
-                <input type="text" name="name" value={this.state.name} onChange={this.handleChange}/>
-                <br/>
-                Email:
-                <input type="email" name="email" value={this.state.email} onChange={this.handleChange}/>
-                <br/>
-                <textarea name="description" cols="30" rows="10" value={this.state.dscription} onChange={this.handleChange} />
-                <br/>
-                <input type="submit" value="Clcik" onClick={this.handleSubmit}/>
-            </form>
-        );
+        return <form onSubmit={this.formSubmit}>
+            Name: <br />
+            <input type="text" name="email" value={this.state.email} onChange={this.inputChange} />
+            <br />
+            Email: <br />
+            <input type="password" name="password" value={this.state.password} onChange={this.inputChange} />
+            <br />
+            Decription: <br />
+            <textarea name="description" cols="30" rows="10" value={this.state.description} onChange={this.inputChange}></textarea>
+            <br />
+            <input type="submit" value="Send" />
+        </form>
     }
 }
 
-export default FormComponent;
+export default FormComponent

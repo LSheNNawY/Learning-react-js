@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+/*import React, { Component } from 'react';
 
 class EventComponent extends Component {
     state = {
@@ -35,4 +35,41 @@ class EventComponent extends Component {
     }
 }
 
-export default EventComponent;
+export default EventComponent; */
+
+import React, { Component } from 'react';
+
+class EventComponent extends Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            age: 25
+        }
+    }
+
+    // increase value by 1
+    increase = () => {
+        let age = this.state.age
+        this.setState({
+            age: ++age
+        })
+    }
+
+    // decrease value by 1
+    decrease = () => {
+        let age = this.state.age
+        this.setState({
+            age: --age
+        })
+    }
+
+    render() {
+        return <div>
+            <p>Your age is, <strong> {this.state.age} </strong></p>
+            <button onClick={this.increase}>Increase +</button> &nbsp;
+            <button onClick={this.decrease}>Decrease -</button>
+        </div>
+    }
+}
+
+export default EventComponent

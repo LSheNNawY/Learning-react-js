@@ -1,31 +1,22 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 
 class ClassComponent extends Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            user: {
+                name: 'Salah',
+                age: '25'
+            },
 
-    // constructor(props) {
-    //     super(props)
-    //     this.state = {
-    //         user: {
-    //             name: 'salah',
-    //             age: 25
-    //         },
-    //         time: new Date()
-    //     }
-    // }
-    state = {
-        user: {
-            name: 'salah',
-            age: 25
-        },
-        time: new Date()
+            time: new Date()
+        }
     }
 
     componentDidMount() {
-        setInterval(()=> {
-            this.timerId = this.setState({
-                time: new Date()
-            })
-        }, 1000)
+        setInterval(() => {
+            this.timeId = this.setState({ time: new Date() })
+        }, 1000);
     }
 
     componentWillUnmount() {
@@ -33,16 +24,14 @@ class ClassComponent extends Component {
     }
 
     render() {
-        
-        return (
-            <div>
-                <p> Welcome, {this.state.user.name} from class component</p>
-                <p>your age is {this.state.user.age} </p>
-                <h5>time now is, {this.state.time.toLocaleTimeString()}</h5>
-                <h4>laptop model is, {this.props.laptopModel}</h4>
-            </div>
-        );
+        return <div>
+            <p>Time now is, <strong>{this.state.time.toLocaleTimeString()}</strong> , Using componentDidMount()</p>
+            <p>Your name is, {this.state.user.name}</p>
+            <p>Your Age is, {this.state.user.age}</p>
+            <p>Your laptop model is, {this.props.laptopModel}</p>
+        </div>
+
     }
 }
 
-export default ClassComponent;
+export default ClassComponent 
