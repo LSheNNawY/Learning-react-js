@@ -5,8 +5,8 @@ class FormComponent extends Component {
     constructor(props) {
         super(props)
         this.state = {
+            name: '',
             email: '',
-            password: '',
             description: ''
 
         }
@@ -23,8 +23,8 @@ class FormComponent extends Component {
         e.preventDefault()
         alert('Data sent!')
         this.setState({
+            name: '',
             email: '',
-            password: '',
             description: ''
         })
     }
@@ -32,13 +32,13 @@ class FormComponent extends Component {
     render() {
         return <form onSubmit={this.formSubmit}>
             Name: <br />
-            <input type="text" name="email" value={this.state.email} onChange={this.inputChange} />
+            <input type="text" name="name" value={this.state.name} onChange={this.inputChange} />
             <br />
             Email: <br />
-            <input type="password" name="password" value={this.state.password} onChange={this.inputChange} />
+            <input type="email" name="email" value={this.state.email} onChange={this.inputChange} />
             <br />
-            Decription: <br />
-            <textarea name="description" cols="30" rows="10" value={this.state.description} onChange={this.inputChange}></textarea>
+            Description: <br />
+            <textarea name="description" cols="30" rows="10" value={this.state.description} onChange={this.inputChange}/>
             <br />
             <input type="submit" value="Send" />
         </form>
