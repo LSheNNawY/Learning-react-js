@@ -5,7 +5,7 @@ import EventComponent from './components/EventComponent'
 import ListsComponent from './components/ListsComponent'
 import FormComponent from './components/FormComponent'
 import FormikAndYupComponent from './components/FormComponentUsingFormikAndYup'
-
+import UsersComponents from "./components/api/UsersComponents";
 
 function App() {
     let name = 'salah';
@@ -26,6 +26,8 @@ function App() {
             <hr/>
             <h2>Using formik and yup </h2>
             <FormikAndYupComponent/>
+            {/*getting users via ajax request*/}
+            <UsersComponents />
         </div>
     );
 }

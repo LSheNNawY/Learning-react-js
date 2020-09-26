@@ -10,8 +10,8 @@ const validationSchema = Yup.object().shape({
         .email('Invalid email address')
         .required('Email is required'),
     description: Yup.string()
-        .min(10, 'Too short description')
-        .max(50, 'Too long description')
+        .min(10, 'Min length is 10 chars')
+        .max(50, 'Max length is 50 chars')
 });
 
 const FormComponentUsingFormikAndYup = (props) => {
